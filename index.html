@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome 💕</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ffe4f2;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #enter-screen {
+      text-align: center;
+      background: #fff0f5;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+    }
+
+    #enter-screen h1 {
+      color: #ff69b4;
+      margin-bottom: 20px;
+    }
+
+    #enter-btn {
+      padding: 12px 24px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 10px;
+      background-color: #ff69b4;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    #enter-btn:hover {
+      background-color: #ff1493;
+    }
+
+    #main-content {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="enter-screen">
+    <h1>Hey Cutesttttt  💖</h1>
+    <p>Click below to open something magical ✨</p>
+    <button id="enter-btn">Enter</button>
+  </div>
+
+  <iframe id="main-content" src="birthday.html" frameborder="0" style="width:100vw; height:100vh;"></iframe>
+
+  <script>
+    document.getElementById("enter-btn").addEventListener("click", () => {
+      document.getElementById("enter-screen").style.display = "none";
+      document.getElementById("main-content").style.display = "block";
+    });
+  </script>
+</body>
+</html>

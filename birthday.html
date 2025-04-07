@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Risha 💖</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #ffe4f2;
+      font-family: 'Courier New', monospace;
+      overflow-x: hidden;
+      cursor: url('https://cdn-icons-png.flaticon.com/512/616/616408.png') 16 16, auto;
+    }
+
+    .hearts, .butterflies, .confetti {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .heart {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-image: url('https://cdn-icons-png.flaticon.com/512/833/833472.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      animation: floatUp 10s linear infinite;
+      opacity: 0.6;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+
+    .butterfly {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-image: url('https://img.freepik.com/premium-vector/delicate-pink-watercolor-butterfly-illustration_53876-387904.jpg?w=1380');
+      background-size: contain;
+      background-repeat: no-repeat;
+      animation: flutter linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes flutter {
+      0% { transform: translate(0, 0) rotate(0deg); }
+      25% { transform: translate(-20px, 50px) rotate(10deg); }
+      50% { transform: translate(20px, 100px) rotate(-10deg); }
+      75% { transform: translate(-10px, 150px) rotate(10deg); }
+      100% { transform: translate(0, 200px) rotate(0deg); opacity: 0; }
+    }
+
+    #container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    h2 {
+      color: #ff1493;
+      text-shadow: 0 0 8px #ffb6c1;
+    }
+
+    .slideshow {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .love-cards {
+      margin-top: 40px;
+      display: grid;
+      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .card {
+      perspective: 1000px;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1em;
+      padding: 20px;
+    }
+
+    .card-front {
+      background-color: #ffccdd;
+      color: #ff69b4;
+    }
+
+    .card-back {
+      background-color: #ffc0cb;
+      transform: rotateY(180deg);
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts" id="hearts"></div>
+  <div class="butterflies" id="butterflies"></div>
+  <canvas class="confetti" id="confetti"></canvas>
+
+  <button id="playBtn" style="position: fixed; bottom: 20px; right: 20px; padding: 10px 20px; background-color: #ff69b4; color: white; border: none; border-radius: 20px; box-shadow: 0 0 10px #ffb6c1; font-size: 16px; cursor: pointer; z-index: 1000;">Click ig 🎶</button>
+  <audio id="bgMusic" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2023/03/20/audio_8f1b58675d.mp3?filename=calm-romantic-melody-142076.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div id="container">
+    <h2>Happy Birthday to the LOML 💕</h2>
+
+    <div class="slideshow" id="photo-slideshow">
+      <img src="https://i.ibb.co/Kx80zHZK/girl1.jpg" class="slide active">
+      <img src="https://i.ibb.co/G3tpj82h/girl2.jpg" class="slide">
+      <img src="https://i.ibb.co/RTxChj9L/girl3.jpg" class="slide">
+      <img src="https://i.ibb.co/GQXXTvpM/gir-4.jpg" class="slide">
+      <img src="https://i.ibb.co/gL7DZMdC/gir-5.jpg" class="slide">
+      <img src="https://i.ibb.co/r2hCbTyr/girl6.jpg" class="slide">
+      <img src="https://i.ibb.co/jv53VPmV/girl7.jpg" class="slide">
+    </div>
+
+    <div class="love-cards">
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">💖</div>
+          <div class="card-back">Your smile makes everything better 🌸</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">✨</div>
+          <div class="card-back">You light up my world like nobody else ✨</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">🏡</div>
+          <div class="card-back">Being with you feels like home 🏡</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">🌷</div>
+          <div class="card-back">You're the sweetest part of my world 💗</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">🌈</div>
+          <div class="card-back">Being with you feels like a dream 💕</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">📲</div>
+          <div class="card-back">You're my favorite notification 💖</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    const playBtn = document.getElementById("playBtn");
+    const bgMusic = document.getElementById("bgMusic");
+    playBtn.addEventListener("click", () => {
+      bgMusic.play();
+      playBtn.style.display = "none";
+      triggerPopup();
+      fireConfetti();
+    });
+
+    function slideshowEffect() {
+      const slides = document.querySelectorAll('.slide');
+      let current = 0;
+      setInterval(() => {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+      }, 3000);
+    }
+
+    function createFloating(className, containerId, interval, isButterfly = false) {
+      const container = document.getElementById(containerId);
+      setInterval(() => {
+        const el = document.createElement('div');
+        el.className = className;
+        el.style.left = Math.random() * 100 + 'vw';
+        el.style.top = isButterfly ? Math.random() * 100 + 'vh' : '100vh';
+        el.style.animationDuration = (Math.random() * 3 + 4) + 's';
+        container.appendChild(el);
+        setTimeout(() => el.remove(), 10000);
+      }, interval);
+    }
+
+    function fireConfetti() {
+      const duration = 8 * 1000;
+      const end = Date.now() + duration;
+      (function frame() {
+        confetti({
+          particleCount: 5,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 },
+        });
+        confetti({
+          particleCount: 5,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 },
+        });
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      })();
+    }
+
+    function triggerPopup() {
+      setTimeout(() => alert("Why are you so cuteee 😭😭😭😭💖"), 1000);
+      setTimeout(() => alert("I hope you always keep smiling like you're ding now 😊"), 3500);
+    }
+
+    window.onload = () => {
+      slideshowEffect();
+      createFloating('heart', 'hearts', 800);
+      createFloating('butterfly', 'butterflies', 1500, true);
+    };
+  </script>
+</body>
+</html>
